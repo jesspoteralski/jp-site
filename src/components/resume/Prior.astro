@@ -1,0 +1,112 @@
+---
+import Section from "./Section.astro";
+import RoundedBox from "./RoundedBox.astro";
+
+const berkeley = {
+  institution: "UC Berkeley School of Public Health",
+  url: "https://10xgenomics.com",
+  location: "Berkeley, CA",
+};
+
+const ucsf = {
+  institution: "UCSF School of Public Health",
+  url: "https://10xgenomics.com",
+  location: "San Francisco, CA",
+};
+
+const albany = {
+  institution: "New York State Department of Public Health",
+  url: "https://10xgenomics.com",
+  location: "Albany, NY",
+};
+
+const experience = [berkeley, ucsf, albany];
+---
+
+<style>
+  h3 {
+  }
+  p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  ul {
+    padding: 0 0 0 1rem;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  li {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .experience {
+    display: grid;
+    gap: 2rem;
+  }
+  .details {
+    display: grid;
+    gap: 1rem;
+  }
+  ul {
+    padding: 0 0 0 1rem;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  li {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  a {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .pub {
+    display: grid;
+    gap: 0.5rem;
+  }
+</style>
+
+<Section title="Prior">
+  <RoundedBox>
+    <div class="experience">
+      <p>
+        My career began in academic research, specifically public health, before
+        transitioning to design and engineering. I contributed to early-onset
+        Alzheimer's research at the New York State Department of Health and
+        conducted studies in the lab of Dr. Richard Stephens at UCSF and UC
+        Berkeley, where I helped develop assays to quantify in vitro host cell
+        infections, engineered custom antibodies using scFv technology, and
+        explored the role of heparin sulfate in chlamydia infections. Since
+        leaving academia, I have continued to work in life sciences as I believe
+        in the vital role of science in shaping the world.
+      </p>
+      <div class="pub">
+        <h4>Publications</h4>
+        <a
+          href="https://journals.asm.org/doi/10.1128/iai.74.3.1795-1799.2006"
+          target="_blank"
+        >
+          Interaction of Chlamydia trachomatis with Mammalian Cells Is
+          Independent of Host Cell Surface Heparan Sulfate Glycosaminoglycans</a
+        >
+      </div>
+      <ul>
+        {
+          experience.map((job) => {
+            return <li>{`${job.institution}, ${job.location}`}</li>;
+          })
+        }
+      </ul>
+    </div>
+  </RoundedBox>
+</Section>
