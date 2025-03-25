@@ -1,0 +1,29 @@
+---
+import RoundedBox from "./RoundedBox.astro";
+import BoxRow from "./BoxRow.astro";
+
+const keywords = [
+  "Design driven frontend development",
+  "Scalable & accessible UI/UX",
+  "Bridging design & engineering",
+];
+---
+
+<style>
+  p {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+  }
+</style>
+
+<BoxRow>
+  {
+    keywords.map((keyword) => (
+      <RoundedBox>
+        <p>{keyword}</p>
+      </RoundedBox>
+    ))
+  }
+</BoxRow>

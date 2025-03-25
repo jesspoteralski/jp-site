@@ -1,0 +1,128 @@
+---
+import Section from "./Section.astro";
+import RoundedBox from "./RoundedBox.astro";
+
+const genomics = {
+  title: "Senior Design Engineer",
+  company: "10x Genomics",
+  url: "https://10xgenomics.com",
+  location: "Pleasanton, CA",
+  start: "2018",
+  end: "today",
+  highlights: [
+    "Bridged design and engineering in a hybrid role, focusing on the presentation layer of digital platforms",
+    "Designed, implemented, and optimized design systems for content layout and product analytics",
+    "Contributed to the design and development of corporate and technical support website",
+    "Supported graphic design, print design, and automation marketing initiatives",
+    "Conducted research and explored UX/UI and technical solutions",
+  ],
+};
+
+const freelance = {
+  title: "Design and Engineering Consultant",
+  company: "Self-employed",
+  url: "",
+  location: "San Francisco, CA",
+  start: "2013",
+  end: "2018",
+  highlights: [
+    "Sought a variety of design and development projects primarily with biotechnology clients",
+    "Managed projects for print and package design, logo and branding efforts, and web and digital solutions",
+    "Generated technical illustrations for various print and digital applications",
+    "Developed and refined UX/UI designs for mobile apps",
+  ],
+};
+
+const quest = {
+  title: "Creative Lead",
+  company: "Quest Diagnostics",
+  url: "https://www.questdiagnostics.com/",
+  location: "South San Francisco, CA",
+  start: "2011",
+  end: "2013",
+  highlights: [
+    "Oversaw a post-acquisition product and service rebranding effort",
+    "Updated print collateral and large-format design tradeshow assets",
+    "Delivered high-quality print and web ads for marketing",
+  ],
+};
+
+const abcam = {
+  title: "Marcom Specialist",
+  company: "Abcam",
+  url: "https://www.abcam.com/en-us",
+  location: "South San Francisco, CA",
+  start: "2007",
+  end: "2011",
+  highlights: [
+    "Prepared catalogs, print advertisements, tradeshow materials",
+    "Created visual assets for web and presentations",
+  ],
+};
+
+const experience = [genomics, freelance, quest, abcam];
+---
+
+<style>
+  h3 {
+  }
+  p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  ul {
+    padding: 0 0 0 1rem;
+    margin: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  li {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .experience {
+    display: grid;
+    gap: 2rem;
+  }
+  .details {
+    display: grid;
+    gap: 1rem;
+  }
+</style>
+
+<Section title="Experience">
+  {
+    experience.map((job) => {
+      return (
+        <div class="experience">
+          <RoundedBox>
+            <div class="details">
+              <h3>{job.title}</h3>
+              <div>
+                <p>
+                  {job?.url && (
+                    <span>
+                      <a href={job.url}>{job.company}</a>
+                      {", "}
+                    </span>
+                  )}
+                  {job.location}
+                </p>
+                <p>
+                  {job.start}&mdash;{job.end}
+                </p>
+              </div>
+            </div>
+            <ul>
+              {job.highlights.map((highlight: string) => (
+                <li>{highlight}</li>
+              ))}
+            </ul>
+          </RoundedBox>
+        </div>
+      );
+    })
+  }
+</Section>

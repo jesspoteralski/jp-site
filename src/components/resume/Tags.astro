@@ -1,0 +1,26 @@
+---
+const { color } = Astro.props;
+const { labels } = Astro.props;
+---
+
+<style>
+  section {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  div {
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+  }
+</style>
+
+<section>
+  {
+    labels.map((label: string) => (
+      <div style={{ backgroundColor: color }}>{label}</div>
+    ))
+  }
+</section>
