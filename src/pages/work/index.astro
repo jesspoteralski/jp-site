@@ -1,0 +1,64 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import Keywords from "../../components/resume/Keywords.astro";
+import BrandingStatement from "../../components/resume/BrandingStatement.astro";
+import Accomplishments from "../../components/resume/Accomplishments.astro";
+import Skills from "../../components/resume/Skills.astro";
+import Experience from "../../components/resume/Experience.astro";
+import Aside from "../../components/resume/Aside.astro";
+import Prior from "../../components/resume/Prior.astro";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      body {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 225px;
+        gap: 4rem;
+        padding: 0 1rem;
+        justify-content: space-between;
+        background: linear-gradient(180deg, #fcfcfa 0%, #faf8e9 100%);
+        @media (max-width: 900px) {
+          grid-template-columns: 1fr;
+          gap: 0;
+        }
+      }
+      main {
+        padding: 6rem 0 4rem;
+        @media (max-width: 900px) {
+          padding: 4rem 0 0;
+        }
+      }
+      h1 {
+        border-bottom: solid 1px;
+        padding-bottom: 2rem;
+      }
+      .layout {
+        display: grid;
+        gap: 4rem;
+        padding: 4rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>{"{Design && Frontend} Engineer"}</h1>
+      <div class="layout">
+        <Keywords />
+        <BrandingStatement />
+        <Accomplishments />
+        <Skills />
+        <Experience />
+        <Prior />
+      </div>
+    </main>
+    <aside>
+      <Aside />
+    </aside>
+  </body>
+</html>

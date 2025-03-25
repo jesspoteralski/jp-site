@@ -1,0 +1,53 @@
+---
+import Section from "./Section.astro";
+import RoundedBox from "./RoundedBox.astro";
+import BoxRow from "./BoxRow.astro";
+
+const accomplishments = [
+  {
+    title: "Playbook",
+    description:
+      "A design and assembly workflow that allows non-technical teams to publish and manage web pages that adhere to the company's high design standards with minimal design or engineering resources",
+  },
+  {
+    title: "QC Reports",
+    description:
+      "Modernized a legacy React dashboard by first separating pipeline data from embedded styles and layout, then replaced class-based components written in Javascript to function components and hooks using Typescript",
+  },
+  {
+    title: "Discovery Hub",
+    description:
+      "Using React to compose SVG, built an interactive visualization for users to explore datasets of human and mouse tumor samples",
+    link: "https://www.10xgenomics.com/research-areas/cancer/visium-discovery-hub",
+  },
+];
+---
+
+<style>
+  p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  a {
+    font-size: 1rem;
+  }
+</style>
+
+<Section title="Recent accomplishments">
+  <BoxRow>
+    {
+      accomplishments.map((accomplishment) => (
+        <RoundedBox>
+          <h3>{accomplishment.title}</h3>
+          <p>{accomplishment.description}</p>
+          {accomplishment.link && (
+            <a href={accomplishment.link} target="_blank">
+              View
+            </a>
+          )}
+        </RoundedBox>
+      ))
+    }
+  </BoxRow>
+</Section>

@@ -1,0 +1,15 @@
+---
+const { title } = Astro.props;
+---
+
+<style>
+  section {
+    display: grid;
+    gap: 1rem;
+  }
+</style>
+
+<section>
+  <h2>{title}</h2>
+  <slot />
+</section>

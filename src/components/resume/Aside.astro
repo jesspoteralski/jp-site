@@ -1,0 +1,86 @@
+---
+import { Image } from "astro:assets";
+import bioPhoto from "../../assets/work/jesse.jpg";
+import resume from "../../../public/poteralski-resume.pdf";
+---
+
+<style>
+  div {
+    display: grid;
+  }
+  p,
+  a {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+  .details {
+    border-left: solid 1px;
+    padding-left: 1rem;
+  }
+  .aside-content {
+    display: grid;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    padding-top: 1rem;
+  }
+  .group {
+    display: grid;
+    gap: 0.25rem;
+  }
+  h4 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+</style>
+
+<div class="aside-content">
+  <Image src={bioPhoto} alt="image" width="170" height="170" />
+
+  <div class="group details">
+    <h4>About</h4>
+    <div>
+      <p>Jesse Poteralski</p>
+      <p>jpoteralski@gmail.com</p>
+      <p>(415) 577-0804</p>
+      <p>Grass Valley, CA</p>
+      <a href={resume}>&#x2193; Download resume</a>
+    </div>
+  </div>
+  <div class="group details">
+    <h4>Education</h4>
+    <div>
+      <a href="https://www.clarkson.edu/">Clarkson University</a>
+      <a href="https://extension.berkeley.edu/academic-areas/art-and-design/"
+        >UC Berkeley Ext. (Design)</a
+      >
+    </div>
+  </div>
+  <div class="group details">
+    <h4>Illustrations</h4>
+    <div>
+      <a href="/work/technical-illustrations">Technical illustrations</a>
+      <a href="https://codepen.io/jesspoteralski/full/QWLrVdQ"
+        >Spatial GEX demo</a
+      >
+      <a href="/work/branding">Logo and branding</a>
+    </div>
+  </div>
+  <div class="group details">
+    <h4>Links</h4>
+    <div>
+      <a
+        href="https://open.spotify.com/artist/0Ci5oD1OAladsvJLOpKMMc?si=WbZzfwAhRvmbcfiUv3ukOg"
+        >Spotify</a
+      >
+      <a href="https://www.linkedin.com/in/poteralski/">LinkedIn</a>
+    </div>
+  </div>
+  <div class="group details">
+    <h4>Currently learning</h4>
+    <div>
+      <p>Web components</p>
+    </div>
+  </div>
+</div>

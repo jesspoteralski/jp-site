@@ -1,0 +1,81 @@
+---
+import Tags from "./Tags.astro";
+import Section from "./Section.astro";
+import RoundedBox from "./RoundedBox.astro";
+import BoxRow from "./BoxRow.astro";
+
+const frontend = {
+  title: "Frontend Engineering",
+  description:
+    "Building scalable, accessible, performant and user-centric interfaces using core web technologies, modern component based architectures",
+  tags: [
+    "React",
+    "Typescript",
+    "NextJS",
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "ThreeJS",
+    "Astro",
+    "Storybook",
+    "GraphQL",
+  ],
+  color: "#AAEBA4",
+};
+
+const design = {
+  title: "UX/UI Design",
+  description:
+    "Designing and building user interfaces systems that grow efficiently with a product's needs while ensuring usability for all users",
+  tags: [
+    "Design systems",
+    "a11y",
+    "Figma",
+    "Adobe",
+    "SVG",
+    "Animation",
+    "Data visualization",
+    "Technical illustration",
+    "Typography",
+  ],
+  color: "#FD8716",
+};
+
+const collaboration = {
+  title: "Cross-Functional Collaboration",
+  description:
+    "Experience on software product, engineering, and marketing teams helps bridge product strategy with design and development",
+  tags: [
+    "Fullstory",
+    "Cloudinary",
+    "Web analytics",
+    "Content management",
+    "User research",
+  ],
+  color: "#BFEBF8",
+};
+
+const skills = [frontend, design, collaboration];
+---
+
+<style>
+  p {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+</style>
+
+<Section title="Strengths and skills">
+  <BoxRow>
+    {
+      skills.map((skill) => (
+        <RoundedBox>
+          <h3>{skill.title}</h3>
+          <p>{skill.description}</p>
+          <Tags labels={skill.tags} color={skill.color} />
+        </RoundedBox>
+      ))
+    }
+  </BoxRow>
+</Section>

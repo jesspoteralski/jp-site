@@ -5,8 +5,7 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #3544e1f0;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -35,16 +34,11 @@ body {
 	padding: 0;
 	text-align: left;
 	background: white;
-	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: rgb(var(--gray-dark));
 	font-size: 20px;
 	line-height: 1.7;
-}
-main {
-	max-width: 720px;
-	margin: 0 auto;
 }
 h1,
 h2,
@@ -52,7 +46,7 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.5rem 0;
+	margin: 0;
 	color: rgb(var(--black));
 	line-height: 1.2;
 }
@@ -64,6 +58,7 @@ h2 {
 }
 h3 {
 	font-size: 1.953em;
+	line-height: 1;
 }
 h4 {
 	font-size: 1.563em;
@@ -77,6 +72,9 @@ b {
 }
 a {
 	color: var(--accent);
+}
+a:not(:is(:hover, :focus)) {
+  text-decoration-color: color-mix(in srgb, var(--accent), transparent 50%)
 }
 a:hover {
 	color: var(--accent);
@@ -100,7 +98,7 @@ table {
 img {
 	max-width: 100%;
 	height: auto;
-	border-radius: 8px;
+	border-radius: 3rem;
 }
 code {
 	padding: 2px 5px;
@@ -115,10 +113,9 @@ pre > code {
 	all: unset;
 }
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
+	border-left: 1px solid;
+	padding: 0 0 0 2rem;
 	margin: 0px;
-	font-size: 1.333em;
 }
 hr {
 	border: none;

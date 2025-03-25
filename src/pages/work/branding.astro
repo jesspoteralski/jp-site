@@ -1,0 +1,66 @@
+---
+import BaseHead from "../../components/BaseHead.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { Image } from "astro:assets";
+import logo from "../../assets/work/CBA-branding.png";
+import ideas from "../../assets/work/CBA-branding-ideas.png";
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      body {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 4rem 1rem;
+        justify-content: space-between;
+        background: #fcfcfa;
+        @media (max-width: 900px) {
+          grid-template-columns: 1fr;
+        }
+      }
+      main {
+      }
+      h1 {
+        border-bottom: solid 1px;
+        padding-bottom: 2rem;
+      }
+      .layout {
+        display: grid;
+        grid-template-columns: 1fr 225px;
+        gap: 6rem;
+        padding: 4rem 0;
+        align-items: start;
+      }
+      p {
+        font-size: 1rem;
+        color: color-mix(in srgb, currentcolor, transparent 50%);
+        line-height: 1.2;
+        border-left: solid 1px;
+        padding-left: 1rem;
+      }
+      a {
+        padding: 1rem 1rem 1rem 0;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>{"Logo and branding"}</h1>
+      <a href="/work">&#x2190;{"back"}</a>
+      <div class="layout">
+        <Image src={ideas} alt="Graphic of a human cell lipid bilayer" />
+        <p>
+          In 2918 I was comissioned to design a new logo for the California
+          Bluegrass Association. It was narrowed from a dozen versions down to a
+          handful by displaying them at various bluegrass jams to get input from
+          local players. The CBA board then chose from a final three.
+        </p>
+        <Image src={logo} alt="Graphic of a human cell lipid bilayer" />
+        <p>A page about the logo in the CBA branding guidebook.</p>
+      </div>
+    </main>
+  </body>
+</html>
