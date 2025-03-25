@@ -15,12 +15,17 @@ const posts = (await getCollection("posts")).sort(
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
     <style>
-      article {
-        padding: 4rem 1rem;
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
       }
     </style>
   </head>
   <body>
+    <p>it's empty.</p>
     <!-- <Header />
     <main>
       <article>
