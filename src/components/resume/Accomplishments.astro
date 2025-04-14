@@ -5,12 +5,14 @@ import BoxRow from "./BoxRow.astro";
 
 const accomplishments = [
   {
-    title: "Playbook",
+    title: "Layout and Display",
     description:
-      "A design and assembly workflow that allows non-technical teams to publish and manage web pages that adhere to the company's high design standards with minimal design or engineering resources",
+      "A design and assembly workflow that allows non-technical teams to publish and design pages that adhere to design standards with minimal design or engineering resources",
+    link: "/work/layout",
+    target: "_self",
   },
   {
-    title: "QC Reports",
+    title: "Quality Reports",
     description:
       "Modernized a legacy React dashboard by first separating pipeline data from embedded styles and layout, then replaced class-based components written in Javascript to function components and hooks using Typescript",
   },
@@ -19,6 +21,7 @@ const accomplishments = [
     description:
       "Using React to compose SVG, built an interactive visualization for users to explore datasets of human and mouse tumor samples",
     link: "https://www.10xgenomics.com/research-areas/cancer/visium-discovery-hub",
+    target: "_blank",
   },
 ];
 ---
@@ -42,8 +45,8 @@ const accomplishments = [
           <h3>{accomplishment.title}</h3>
           <p>{accomplishment.description}</p>
           {accomplishment.link && (
-            <a href={accomplishment.link} target="_blank">
-              View
+            <a href={accomplishment.link} target={accomplishment.target}>
+              Read more &#8594;
             </a>
           )}
         </RoundedBox>
