@@ -15,18 +15,14 @@ import resume from "../../../public/poteralski-resume.pdf";
     margin: 0;
   }
   .details {
-    border-left: solid 1px;
+    border-left: solid 2px;
     padding-left: 1rem;
   }
   .aside-content {
     display: grid;
     gap: 1rem;
     position: sticky;
-    top: 0;
-    padding-top: 1rem;
-    img {
-      border-radius: 3rem;
-    }
+    top: calc(6rem + 106px);
   }
   .group {
     display: grid;
@@ -39,7 +35,6 @@ import resume from "../../../public/poteralski-resume.pdf";
 </style>
 
 <div class="aside-content">
-  <Image src={bioPhoto} alt="image" width="170" height="170" />
 
   <div class="group details">
     <h4>About</h4>

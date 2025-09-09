@@ -2,13 +2,25 @@
 import Section from "./Section.astro";
 import RoundedBox from "./RoundedBox.astro";
 
+const freelanceCurrent = {
+  title: "Design and Engineering Consultant",
+  company: "Self-employed",
+  url: "",
+  location: "Grass Valley, CA",
+  start: "2025",
+  end: "today",
+  highlights: [
+    "UX/UI redesign for a biotech startup leveraging AI to quickly connect researchers with the samples they need."
+  ],
+};
+
 const genomics = {
   title: "Senior Design Engineer",
   company: "10x Genomics",
   url: "https://10xgenomics.com",
   location: "Pleasanton, CA",
   start: "2018",
-  end: "today",
+  end: "2025",
   highlights: [
     "Bridged design and engineering in a hybrid role, focusing on the presentation layer of digital platforms",
     "Designed, implemented, and optimized design systems for content layout and product analytics",
@@ -60,7 +72,7 @@ const abcam = {
   ],
 };
 
-const experience = [genomics, freelance, quest, abcam];
+const experience = [freelanceCurrent, genomics, freelance, quest, abcam];
 ---
 
 <style>
